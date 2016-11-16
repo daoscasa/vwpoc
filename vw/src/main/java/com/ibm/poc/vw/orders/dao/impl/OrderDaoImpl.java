@@ -12,7 +12,7 @@ import com.ibm.poc.vw.orders.model.Order;
 public class OrderDaoImpl implements OrderDao{
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+
 	public Order findById(int id){
 //		return (Order) getSessionFactory().getCurrentSession().get(Order.class, id);
 		SQLQuery query = sessionFactory.getCurrentSession().createSQLQuery("select * from `order` where id = "+id);
