@@ -16,7 +16,7 @@ public class Promotion {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "id", unique = true, nullable = false)
-	private Long id;
+	private int id;
 	@Column(name="material")
 	private String material;
 	@Column(name="description")
@@ -36,11 +36,11 @@ public class Promotion {
 		
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -99,11 +99,5 @@ public class Promotion {
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
-
-	
-	
-	
-	
-	
 
 }

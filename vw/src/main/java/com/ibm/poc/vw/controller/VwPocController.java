@@ -17,25 +17,25 @@ public class VwPocController {
 	List<Promotion> promotions;
 	@Autowired
 	OrderBo orderBo;
-	@Autowired
-	PromotionBo promotionBo;
+//	@Autowired
+//	PromotionBo promotionBo;
 	
 	
 	
 	@RequestMapping(value ={"/", "/welcome**"}, method = RequestMethod.GET)
 	public ModelAndView defaultPage() {
-		promotions = new ArrayList<>();
-		promotions=promotionBo.getAll();
-		ModelAndView mav = new ModelAndView("login");
-		mav.addObject("promotions",promotions);
+//		promotions = new ArrayList<>();
+//		promotions=promotionBo.getAll();
+		ModelAndView mav = new ModelAndView("home");
+//		mav.addObject("promotions",promotions);
 		//orderBo.findById(1);
 		return mav;
 	}
 	
 	@RequestMapping(value={"/promotions"} , method=RequestMethod.GET)
 	public ModelAndView getAllPromotions(){
-		promotions = new ArrayList<>();
-		promotions=promotionBo.getAll();
+//		promotions = new ArrayList<>();
+//		promotions=promotionBo.getAll();
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("promotions",promotions);
 		return mav;

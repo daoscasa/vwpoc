@@ -12,8 +12,8 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
@@ -80,6 +80,11 @@ public class AppConfig extends WebMvcConfigurerAdapter{
 		viewResolver.setPrefix("/WEB-INF/pages/");
 		viewResolver.setSuffix(".jsp");
 		return viewResolver;
+	}
+	
+	@Override
+	public void addResourceHandlers(final ResourceHandlerRegistry registry) {
+	    registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	}
 	
 //	@Bean
